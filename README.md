@@ -173,7 +173,7 @@ The scan runs with `--no-update`, so TruffleHog never replaces itself.
 
 ## Requirements
 
-Requires Conn3x v0.7.0 or later and systemd on each host, on x86_64 or aarch64. Hosts need to reach GitHub for the release, and, with `verify` on, the services whose secrets they find.
+Requires Conn3x v0.7.1 or later and systemd on each host, on x86_64 or aarch64. Hosts need to reach GitHub for the release, and, with `verify` on, the services whose secrets they find.
 
 ## Tested on
 
