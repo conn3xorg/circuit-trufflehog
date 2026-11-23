@@ -189,8 +189,8 @@ circuit "trufflehog" {
 
   step "sandbox_applied" {
     for_each = local.scan
-    command {
-      command  = "systemctl daemon-reload"
+    service_action {
+      action   = "daemon-reload"
       triggers = { sandbox = conn3x_file.trufflehog__sandbox["${each.key}/scan"].revision }
     }
   }
