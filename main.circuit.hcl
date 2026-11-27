@@ -206,10 +206,13 @@ circuit "trufflehog" {
     }
   }
 
+  # A start of the timer's oneshot service waits for the scan to finish and
+  # fails the apply if it fails.
   step "run" {
     for_each = toset(length(var.targets) > 0 && var.run_now ? ["scan"] : [])
-    command {
-      command = "systemctl start ${local.unit}.service"
+    service_action {
+      name   = "${local.unit}.service"
+      action = "start"
       triggers = {
         script  = conn3x_file.trufflehog__script["${each.key}/scan"].revision
         exclude = conn3x_file.trufflehog__exclude["${each.key}/scan"].revision

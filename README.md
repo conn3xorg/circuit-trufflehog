@@ -8,7 +8,7 @@ It only looks. Nothing is moved, rotated or deleted, and the scan runs in a syst
 
 ```hcl
 module "trufflehog" {
-  source = "github.com/conn3xorg/circuit-trufflehog?ref=v0.2.0"
+  source = "github.com/conn3xorg/circuit-trufflehog?ref=v0.3.0"
 
   hosts                = { web = "203.0.113.10", db = "203.0.113.11" }
   ssh_private_key_file = "~/.ssh/id_ed25519"
@@ -173,7 +173,7 @@ The scan runs with `--no-update`, so TruffleHog never replaces itself.
 
 ## Requirements
 
-Requires Conn3x v0.29.0 or later and systemd on each host, on x86_64 or aarch64. Hosts need to reach GitHub for the release, and, with `verify` on, the services whose secrets they find.
+Requires Conn3x v0.37.0 or later and systemd on each host, on x86_64 or aarch64. Hosts need to reach GitHub for the release, and, with `verify` on, the services whose secrets they find.
 
 ## Tested on
 
